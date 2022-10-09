@@ -12,18 +12,16 @@ const books = [
   author:"Colleen Hoover"
 }
 ]
-const names =['jonh', 'anna', 'peter']
-const newNames = names.map((name, index)=> {
-  return <li key={index}>
-{name}
-  </li>
-})
-console.log(newNames)
+
 function BoolList() {
   return (
     <section className='book-list' >   
-    <ul>{newNames}</ul>
-     
+     {books.map((book, index)=>{
+      const { img, title, author} = book
+      console.log("book", book)
+return <Book img={img} title={title} author={author} key={index}/>
+// return <Book book={book}/>
+     })}
     </section>
   );
 }
