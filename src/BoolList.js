@@ -14,19 +14,24 @@ const secondBook ={
 function BoolList() {
   return (
     <section className='booklist' >   
-      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/>
+      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}>
+        <p>
+          Reprehenderit ad cillum ex Lorem aliquip dolore sunt. Dolor quis incididunt et culpa eiusmod est fugiat in non. Sunt nulla mollit commodo aliquip qui adipisicing et magna. Commodo mollit elit eiusmod laborum consequat dolore exercitation ipsum pariatur cupidatat. Velit laborum exercitation officia eiusmod dolore veniam pariatur cillum proident id. Cillum ad laboris Lorem do.
+        </p>
+      </Book>
       <Book img={secondBook.img} title={firstBook.title} author={secondBook.author}/>
     </section>
   );
 }
 const Book =(props)=>{
-  const {img, title, author} =props;
+  const {img, title, author, children} =props;
   console.log(props)
     return <article className='book'>
   
     <img src={img} alt=""></img>
    <h1>{title}</h1>
     <h4>{author}</h4>
+    {children}
   </article>
 }
 
