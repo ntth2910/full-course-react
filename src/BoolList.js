@@ -25,20 +25,18 @@ function BoolList() {
       // const { img, title, author} = book
       console.log("book", book)
 // return <Book img={img} title={title} author={author} key={index}/>
-return <Book key={index} book={book}/>
+return <Book key={index} {...book}/>
      })}
     </section>
   );
 }
 const Book =(props)=>{
-  const {img, title, author} =props.book;
+  const {img, title, author} =props;
   console.log(props)
     return <article className='book'>
-  
     <img src={img} alt=""></img>
    <h1>{title}</h1>
     <h4>{author}</h4>
-    
   </article>
 }
 
